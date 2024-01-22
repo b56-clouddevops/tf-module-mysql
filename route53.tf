@@ -5,3 +5,7 @@ resource "aws_route53_record" "mysql_dns_record" {
   ttl     = 10
   records = [aws_db_instance.default.address]
 }
+
+output "MYSQL_ENDPOINT" {
+  value = aws_db_instance.default.address
+}
